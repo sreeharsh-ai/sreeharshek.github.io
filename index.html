@@ -14,7 +14,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--black)
 /* NAV */
 nav{display:flex;justify-content:space-between;align-items:center;padding:22px 40px;position:sticky;top:0;background:var(--white);z-index:100;border-bottom:0.5px solid var(--border)}
 .nav-name{font-family:'Syne',sans-serif;font-weight:800;font-size:16px;letter-spacing:-0.03em}
-.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center}
 .nav-links a{text-decoration:none;color:var(--gray);font-size:13px;transition:color .2s}
 .nav-links a:hover{color:var(--black)}
 .nav-cta{background:var(--black);color:var(--white)!important;padding:8px 18px;border-radius:100px;font-size:13px;font-weight:500;text-decoration:none;transition:opacity .2s}
@@ -22,7 +22,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:22px 4
 
 /* ICON BAR */
 .icon-bar{display:flex;gap:10px;padding:36px 40px 0;align-items:center;flex-wrap:wrap}
-.ib{width:50px;height:50px;border-radius:50%;background:var(--card);border:0.5px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,transform .2s}
+.ib{width:50px;height:50px;border-radius:50%;background:var(--card);border:0.5px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,transform .2s;text-decoration:none}
 .ib:hover{background:rgba(0,0,0,0.08);transform:translateY(-2px)}
 .ib.lg{width:62px;height:62px}
 .ib.dark{background:var(--black);border-color:var(--black)}
@@ -35,15 +35,17 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:22px 4
 .hero h1{font-family:'Syne',sans-serif;font-size:clamp(38px,7.5vw,78px);font-weight:800;line-height:1.01;letter-spacing:-0.04em;max-width:860px}
 .cursor{display:inline-block;width:3px;height:.85em;background:var(--black);margin-left:5px;vertical-align:middle;animation:blink 1s step-end infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-.hero-meta{display:flex;align-items:center;gap:16px;margin-top:20px;flex-wrap:wrap}
-.hero-sub{font-size:15px;color:var(--gray);line-height:1.7;font-weight:300;max-width:520px}
+.hero-badges{display:flex;align-items:center;gap:12px;margin-top:24px;flex-wrap:wrap}
+.hero-sub{font-size:15px;color:var(--gray);line-height:1.7;font-weight:300;max-width:520px;margin-top:16px}
 .avail-badge{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:400;color:#1a7a4a;background:#e8f5ee;padding:6px 14px;border-radius:100px;border:0.5px solid #b4dfc9}
 .avail-dot{width:7px;height:7px;border-radius:50%;background:#1a7a4a;animation:pulse 2s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.loc-badge{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--gray);background:var(--card);padding:6px 14px;border-radius:100px;border:0.5px solid var(--border)}
+.loc-badge svg{width:13px;height:13px;stroke:var(--gray);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 
 /* MARQUEE */
 .marquee-wrap{overflow:hidden;border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);padding:13px 0}
-.marquee{display:flex;gap:40px;white-space:nowrap;animation:slide 16s linear infinite}
+.marquee{display:flex;gap:40px;white-space:nowrap;animation:slide 18s linear infinite}
 @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .marquee span{font-size:12px;color:var(--gray);letter-spacing:.1em;text-transform:uppercase;font-weight:400}
 .marquee b{color:var(--black);font-weight:500;font-size:11px}
@@ -58,22 +60,40 @@ section{padding:64px 40px;border-top:0.5px solid var(--border)}
 .about-grid p{font-size:15px;color:var(--gray);line-height:1.8;font-weight:300}
 .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .stat{padding:22px;border:0.5px solid var(--border);border-radius:14px;background:var(--white)}
-.stat .n{font-family:'Syne',sans-serif;font-size:34px;font-weight:800;letter-spacing:-0.04em;line-height:1}
+.stat .n{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;letter-spacing:-0.04em;line-height:1}
 .stat .l{font-size:12px;color:var(--gray);margin-top:6px;font-weight:400;line-height:1.5}
+
+/* EDUCATION */
+.edu-card{border:0.5px solid var(--border);border-radius:18px;padding:32px;display:flex;gap:28px;align-items:flex-start;background:var(--white)}
+.edu-icon{width:48px;height:48px;border-radius:12px;background:var(--black);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.edu-icon svg{stroke:white;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;width:22px;height:22px}
+.edu-info h3{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;letter-spacing:-0.02em;margin-bottom:6px}
+.edu-info p{font-size:14px;color:var(--gray);line-height:1.7;font-weight:300}
+.edu-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.edu-tag{font-size:11px;padding:4px 12px;border-radius:100px;border:0.5px solid var(--border);color:var(--gray);background:var(--card)}
+.edu-tag.active{background:var(--black);color:var(--white);border-color:var(--black)}
 
 /* PROJECTS */
 .proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px}
-.proj{border:0.5px solid var(--border);border-radius:18px;padding:28px;cursor:pointer;transition:border-color .25s,background .25s;position:relative;overflow:hidden}
-.proj:hover{border-color:rgba(0,0,0,0.2);background:rgba(0,0,0,0.018)}
+.proj{border:0.5px solid var(--border);border-radius:18px;padding:28px;position:relative;overflow:hidden;background:var(--white);opacity:.65;border-style:dashed}
 .proj-tag{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);font-weight:500;margin-bottom:14px;display:block}
 .proj h3{font-family:'Syne',sans-serif;font-size:19px;font-weight:700;letter-spacing:-0.02em;margin-bottom:10px;line-height:1.2}
 .proj p{font-size:14px;color:var(--gray);line-height:1.7;font-weight:300}
-.proj-arrow{position:absolute;top:22px;right:22px;width:30px;height:30px;border-radius:50%;border:0.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:13px;transition:all .2s}
-.proj:hover .proj-arrow{background:var(--black);color:var(--white);border-color:var(--black)}
 .proj-tech{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
 .tech{font-size:11px;padding:4px 10px;border-radius:100px;background:var(--card);border:0.5px solid var(--border);color:var(--gray)}
+.coming-badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:#a07a1a;background:#fdf6e3;padding:4px 12px;border-radius:100px;border:0.5px solid #e8d5a0;margin-bottom:14px}
+
+/* CERTIFICATIONS */
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.cert-card{border:0.5px solid var(--border);border-radius:16px;padding:24px;background:var(--white);opacity:.6;border-style:dashed}
+.cert-icon{width:38px;height:38px;border-radius:10px;background:var(--card);border:0.5px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.cert-icon svg{width:18px;height:18px;stroke:var(--black);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.cert-card h4{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;letter-spacing:-0.01em;margin-bottom:6px}
+.cert-card p{font-size:13px;color:var(--gray);font-weight:300}
 
 /* SKILLS */
+.skills-section{display:flex;flex-direction:column;gap:28px}
+.skill-group-label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);font-weight:500;margin-bottom:12px}
 .skills-wrap{display:flex;flex-wrap:wrap;gap:9px}
 .skill{padding:9px 18px;border-radius:100px;border:0.5px solid var(--border);font-size:13px;cursor:default;transition:all .2s;font-weight:400}
 .skill:hover{background:var(--black);color:var(--white);border-color:var(--black)}
@@ -92,7 +112,7 @@ section{padding:64px 40px;border-top:0.5px solid var(--border)}
 footer{padding:22px 40px;border-top:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:center}
 footer p{font-size:13px;color:var(--gray)}
 .f-star{width:28px;height:28px;background:var(--black);border-radius:50%;display:flex;align-items:center;justify-content:center}
-.f-star svg{width:13px;height:13px;stroke:white;fill:none;stroke-width:1.5}
+.f-star svg{width:13px;height:13px;fill:white;stroke:none}
 
 /* RESPONSIVE */
 @media(max-width:640px){
@@ -102,6 +122,7 @@ footer p{font-size:13px;color:var(--gray)}
   .hero{padding:28px 20px 40px}
   section{padding:48px 20px}
   .about-grid{grid-template-columns:1fr}
+  .edu-card{flex-direction:column;gap:16px}
   footer{padding:18px 20px}
 }
 </style>
@@ -113,10 +134,11 @@ footer p{font-size:13px;color:var(--gray)}
   <span class="nav-name">Sreeharsh EK</span>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+    <li><a href="mailto:sreeharshek0@gmail.com" class="nav-cta">Hire Me</a></li>
   </ul>
 </nav>
 
@@ -125,53 +147,55 @@ footer p{font-size:13px;color:var(--gray)}
   <div class="ib dark">
     <svg width="22" height="22" viewBox="0 0 24 24"><path d="M12 2 L13.5 9 L20 10.5 L13.5 12 L12 19 L10.5 12 L4 10.5 L10.5 9 Z" fill="white" stroke="none"/></svg>
   </div>
-  <div class="ib">
-    <svg width="20" height="20" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-  </div>
-  <div class="ib">
-    <svg width="20" height="20" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="2"/><polyline points="8 10 4 14 8 18"/><line x1="12" y1="18" x2="16" y2="18"/></svg>
-  </div>
+  <a class="ib" href="https://github.com/sreeharsh-ai" target="_blank" title="GitHub">
+    <svg width="20" height="20" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+  </a>
+  <a class="ib" href="https://www.linkedin.com/in/sreeharsh-e-k" target="_blank" title="LinkedIn">
+    <svg width="20" height="20" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+  </a>
   <div class="ib lg">
     <svg width="22" height="22" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
   </div>
-  <div class="ib">
-    <svg width="18" height="18" viewBox="0 0 24 24"><circle cx="9" cy="7" r="1" fill="#0a0a0a"/><circle cx="15" cy="7" r="1" fill="#0a0a0a"/><circle cx="9" cy="12" r="1" fill="#0a0a0a"/><circle cx="15" cy="12" r="1" fill="#0a0a0a"/><circle cx="9" cy="17" r="1" fill="#0a0a0a"/><circle cx="15" cy="17" r="1" fill="#0a0a0a"/></svg>
-  </div>
+  <a class="ib" href="https://www.instagram.com/sreeharsh_ek/" target="_blank" title="Instagram">
+    <svg width="20" height="20" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#0a0a0a" stroke="none"/></svg>
+  </a>
   <div class="ib dark">
     <svg width="22" height="22" viewBox="0 0 24 24"><path d="M12 2 L13.5 9 L20 10.5 L13.5 12 L12 19 L10.5 12 L4 10.5 L10.5 9 Z" fill="white" stroke="none"/></svg>
   </div>
-  <div class="ib">
-    <svg width="20" height="20" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><line x1="14" y1="18" x2="21" y2="18"/><line x1="17.5" y1="14.5" x2="17.5" y2="21.5"/></svg>
-  </div>
+  <a class="ib" href="mailto:sreeharshek0@gmail.com" title="Email">
+    <svg width="20" height="20" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,14 22,4"/></svg>
+  </a>
 </div>
 
 <!-- HERO -->
 <div class="hero">
   <h1>Computer Science<br>Engineer, evolving<br>into the next era.<span class="cursor"></span></h1>
-  <div class="hero-meta" style="margin-top:28px">
-    <div class="avail-badge">
-      <span class="avail-dot"></span> Open to opportunities
+  <div class="hero-badges">
+    <div class="avail-badge"><span class="avail-dot"></span> Open to opportunities</div>
+    <div class="loc-badge">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      Kerala, India
     </div>
   </div>
-  <p class="hero-sub" style="margin-top:16px">
-    Hi, I'm <strong>Sreeharsh EK</strong> — a CS Engineering graduate passionate about building meaningful software and exploring the frontiers of technology.
-  </p>
+  <p class="hero-sub">Hi, I'm <strong>Sreeharsh EK</strong> — a B.Tech Computer Science student at Vimal Jyothi Engineering College, passionate about building meaningful software and exploring the frontiers of technology.</p>
 </div>
 
 <!-- MARQUEE -->
 <div class="marquee-wrap">
   <div class="marquee">
     <span>Computer Science <b>·</b></span>
-    <span>Software Engineering <b>·</b></span>
+    <span>B.Tech Student <b>·</b></span>
     <span>Open to Work <b>·</b></span>
     <span>Problem Solver <b>·</b></span>
-    <span>Full Stack Dev <b>·</b></span>
+    <span>Software Engineer <b>·</b></span>
+    <span>Vimal Jyothi Engineering College <b>·</b></span>
     <span>Kerala, India <b>·</b></span>
     <span>Computer Science <b>·</b></span>
-    <span>Software Engineering <b>·</b></span>
+    <span>B.Tech Student <b>·</b></span>
     <span>Open to Work <b>·</b></span>
     <span>Problem Solver <b>·</b></span>
-    <span>Full Stack Dev <b>·</b></span>
+    <span>Software Engineer <b>·</b></span>
+    <span>Vimal Jyothi Engineering College <b>·</b></span>
     <span>Kerala, India <b>·</b></span>
   </div>
 </div>
@@ -182,21 +206,21 @@ footer p{font-size:13px;color:var(--gray)}
   <div class="about-grid">
     <div>
       <h2>Building software that actually matters.</h2>
-      <p>I'm a Computer Science Engineering graduate eager to apply my skills in real-world environments. I enjoy solving complex problems and crafting clean, efficient code across the full stack.</p>
-      <p style="margin-top:14px">Currently on the lookout for my first professional role — whether that's a software developer, backend engineer, or anything in between. I bring curiosity, drive, and a genuine love for the craft.</p>
+      <p>I'm a B.Tech Computer Science Engineering student at Vimal Jyothi Engineering College, Chemperi. I enjoy solving complex problems and crafting clean, efficient code.</p>
+      <p style="margin-top:14px">Currently looking for my first professional opportunity — internships, fresher roles, or freelance projects. I bring curiosity, dedication, and a genuine passion for technology to everything I build.</p>
     </div>
     <div class="stat-grid">
       <div class="stat">
-        <div class="n">CS</div>
-        <div class="l">Engineering Degree</div>
+        <div class="n">B.Tech</div>
+        <div class="l">Computer Science Engineering</div>
       </div>
       <div class="stat">
-        <div class="n">∞</div>
-        <div class="l">Problems solved on the way</div>
+        <div class="n">VJEC</div>
+        <div class="l">Vimal Jyothi Engineering College</div>
       </div>
       <div class="stat">
         <div class="n">100%</div>
-        <div class="l">Ready to contribute</div>
+        <div class="l">Ready to contribute from day one</div>
       </div>
       <div class="stat">
         <div class="n">KL</div>
@@ -206,73 +230,122 @@ footer p{font-size:13px;color:var(--gray)}
   </div>
 </section>
 
+<!-- EDUCATION -->
+<section id="education">
+  <p class="sec-label">Education</p>
+  <div class="edu-card">
+    <div class="edu-icon">
+      <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+    </div>
+    <div class="edu-info">
+      <h3>Vimal Jyothi Engineering College</h3>
+      <p>Chemperi, Kannur, Kerala</p>
+      <p style="margin-top:6px">B.Tech — Computer Science &amp; Engineering &nbsp;·&nbsp; Currently Studying</p>
+      <div class="edu-tags">
+        <span class="edu-tag active">B.Tech CSE</span>
+        <span class="edu-tag active">Currently Studying</span>
+        <span class="edu-tag">Chemperi, Kerala</span>
+        <span class="edu-tag">APJ Abdul Kalam Technological University</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PROJECTS -->
 <section id="projects">
   <p class="sec-label">Projects</p>
   <div class="proj-grid">
-
-    <!-- PROJECT 1 — Replace with your real project -->
     <div class="proj">
-      <span class="proj-arrow">↗</span>
-      <span class="proj-tag">Web App</span>
-      <h3>Project One</h3>
-      <p>Replace this with your real project description. What does it do? What problem does it solve?</p>
-      <div class="proj-tech">
-        <span class="tech">React</span>
-        <span class="tech">Node.js</span>
-        <span class="tech">MongoDB</span>
-      </div>
+      <div class="coming-badge">⏳ Coming soon</div>
+      <span class="proj-tag">Project</span>
+      <h3>First Project</h3>
+      <p>Currently working on building first project. Will be updated here once ready!</p>
+      <div class="proj-tech"><span class="tech">To be updated</span></div>
     </div>
-
-    <!-- PROJECT 2 — Replace with your real project -->
     <div class="proj">
-      <span class="proj-arrow">↗</span>
-      <span class="proj-tag">Machine Learning</span>
-      <h3>Project Two</h3>
-      <p>Replace this with your real project description. What did you build and what did you learn?</p>
-      <div class="proj-tech">
-        <span class="tech">Python</span>
-        <span class="tech">TensorFlow</span>
-        <span class="tech">Flask</span>
-      </div>
+      <div class="coming-badge">⏳ Coming soon</div>
+      <span class="proj-tag">Project</span>
+      <h3>Second Project</h3>
+      <p>More projects on the way. This portfolio grows as you build more during your studies.</p>
+      <div class="proj-tech"><span class="tech">To be updated</span></div>
     </div>
-
-    <!-- PROJECT 3 — Replace with your real project -->
     <div class="proj">
-      <span class="proj-arrow">↗</span>
-      <span class="proj-tag">System Design</span>
-      <h3>Project Three</h3>
-      <p>Replace this with your real project description. Share the GitHub link by updating the href below.</p>
-      <div class="proj-tech">
-        <span class="tech">Java</span>
-        <span class="tech">Spring Boot</span>
-        <span class="tech">MySQL</span>
-      </div>
+      <div class="coming-badge">⏳ Coming soon</div>
+      <span class="proj-tag">Project</span>
+      <h3>Third Project</h3>
+      <p>Great things take time. Keep building and this section will fill up fast.</p>
+      <div class="proj-tech"><span class="tech">To be updated</span></div>
     </div>
+  </div>
+</section>
 
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <p class="sec-label">Certifications</p>
+  <div class="cert-grid">
+    <div class="cert-card">
+      <div class="cert-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+      </div>
+      <h4>Certifications on the way</h4>
+      <p>Currently pursuing certifications. Will be listed here once completed.</p>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <h4>More coming soon</h4>
+      <p>Planning Google, Coursera, or NPTEL certifications. Stay tuned!</p>
+    </div>
   </div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
-  <p class="sec-label">Skills & Technologies</p>
-  <div class="skills-wrap">
-    <span class="skill core">Python</span>
-    <span class="skill core">Java</span>
-    <span class="skill core">C / C++</span>
-    <span class="skill">JavaScript</span>
-    <span class="skill">HTML & CSS</span>
-    <span class="skill">React</span>
-    <span class="skill">Node.js</span>
-    <span class="skill">SQL</span>
-    <span class="skill">MongoDB</span>
-    <span class="skill">Git & GitHub</span>
-    <span class="skill">Linux</span>
-    <span class="skill">Data Structures</span>
-    <span class="skill">Algorithms</span>
-    <span class="skill">OOP</span>
-    <span class="skill">REST APIs</span>
-    <span class="skill">Problem Solving</span>
+  <p class="sec-label">Skills &amp; Technologies</p>
+  <div class="skills-section">
+    <div>
+      <p class="skill-group-label">Languages</p>
+      <div class="skills-wrap">
+        <span class="skill core">Python</span>
+        <span class="skill core">Java</span>
+        <span class="skill core">C</span>
+        <span class="skill core">C++</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+      </div>
+    </div>
+    <div>
+      <p class="skill-group-label">Frameworks &amp; Tools</p>
+      <div class="skills-wrap">
+        <span class="skill">React</span>
+        <span class="skill">Node.js</span>
+        <span class="skill">Git &amp; GitHub</span>
+        <span class="skill">Linux</span>
+        <span class="skill">VS Code</span>
+        <span class="skill">REST APIs</span>
+      </div>
+    </div>
+    <div>
+      <p class="skill-group-label">Databases</p>
+      <div class="skills-wrap">
+        <span class="skill">SQL</span>
+        <span class="skill">MongoDB</span>
+        <span class="skill">MySQL</span>
+      </div>
+    </div>
+    <div>
+      <p class="skill-group-label">Core CS Concepts</p>
+      <div class="skills-wrap">
+        <span class="skill">Data Structures</span>
+        <span class="skill">Algorithms</span>
+        <span class="skill">OOP</span>
+        <span class="skill">Operating Systems</span>
+        <span class="skill">Computer Networks</span>
+        <span class="skill">DBMS</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -281,42 +354,33 @@ footer p{font-size:13px;color:var(--gray)}
   <div class="contact-inner">
     <p class="sec-label">Get in touch</p>
     <h2>Let's build something together.</h2>
-    <p>I'm actively looking for opportunities — full time, internship, or freelance. If you think I'd be a good fit, I'd love to hear from you.</p>
+    <p>I'm actively looking for internships and fresher opportunities. If you think I'd be a good fit for your team, I'd love to hear from you!</p>
     <div class="contact-links">
-
-      <!-- REPLACE: Add your real email below -->
-      <a class="clink" href="mailto:your@email.com">
+      <a class="clink" href="mailto:sreeharshek0@gmail.com">
         <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,14 22,4"/></svg>
-        Email Me
+        sreeharshek0@gmail.com
       </a>
-
-      <!-- REPLACE: Add your real LinkedIn URL below -->
-      <a class="clink" href="https://linkedin.com/in/yourprofile" target="_blank">
+      <a class="clink" href="https://www.linkedin.com/in/sreeharsh-e-k" target="_blank">
         <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         LinkedIn
       </a>
-
-      <!-- REPLACE: Add your real GitHub URL below -->
-      <a class="clink" href="https://github.com/yourusername" target="_blank">
+      <a class="clink" href="https://github.com/sreeharsh-ai" target="_blank">
         <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
         GitHub
       </a>
-
-      <!-- REPLACE: Link to your resume PDF -->
-      <a class="clink" href="resume.pdf" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-        Resume ↗
+      <a class="clink" href="https://www.instagram.com/sreeharsh_ek/" target="_blank">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        Instagram
       </a>
-
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 Sreeharsh EK — CS Engineer</p>
+  <p>© 2026 Sreeharsh EK — B.Tech CS Engineer · Kerala, India</p>
   <div class="f-star">
-    <svg viewBox="0 0 24 24"><path d="M12 2 L13.5 9 L20 10.5 L13.5 12 L12 19 L10.5 12 L4 10.5 L10.5 9 Z" fill="white" stroke="none"/></svg>
+    <svg viewBox="0 0 24 24"><path d="M12 2 L13.5 9 L20 10.5 L13.5 12 L12 19 L10.5 12 L4 10.5 L10.5 9 Z" fill="white"/></svg>
   </div>
 </footer>
 
